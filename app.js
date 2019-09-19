@@ -11,6 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/subscribe', function (req, res) {
+    console.log(req);
     var data = req.body;
     data['time'] = new Date();
     data["email_sent"] = false;
