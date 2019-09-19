@@ -1,0 +1,23 @@
+{
+  "name": "hamlit-website",
+  "version": "1.0.0",
+  "description": "hamlit website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityagohad/hamlit-website.git"
+  },
+  "author": "aditya gohad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adityagohad/hamlit-website/issues"
+  },
+  "homepage": "https://github.com/adityagohad/hamlit-website#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.3.2"
+  }
+}
