@@ -10,7 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post('/subscribe', function (req, res) {
+app.get('/subscribe', function (req, res) {
     var data = req.body;
     data['time'] = new Date();
     data["email_sent"] = false;
