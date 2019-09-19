@@ -2,11 +2,13 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var bodyParser = require("body-parser");
+var cors = require('cors');
 
 const url = 'mongodb://localhost:27017';
 const dbName = 'hamlit_subscribers';
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json());
 
