@@ -11,6 +11,7 @@ const app = express();
 app.use(cors());
 
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 app.post('/subscribe', function (req, res) {
     console.log(req.body);
@@ -30,7 +31,7 @@ app.post('/subscribe', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    res.end("here");
+    res.end();
 });
 
 // app.get('/getAllDocuments', function (req, res) {
