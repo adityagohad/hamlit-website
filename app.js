@@ -62,7 +62,7 @@ const findDocuments = function (db, callback) {
 function sendEmail(to){
     console.log(to);
     var transporter = nodemailer.createTransport({
-        host: 'smtp.zoho.com',
+        host: 'hamlit.co',
         port: 465,
         secure: true,
         auth: {
