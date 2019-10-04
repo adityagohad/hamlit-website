@@ -7,17 +7,23 @@ var cors = require('cors');
 const url = 'mongodb://localhost:27017';
 const dbName = 'hamlit_subscribers';
 
+var nodemailer = require('nodemailer');
+
 const app = express();
 app.use(cors());
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+app.get('/', function (req, res) {
+    res.end();
+});
+
 app.post('/subscribe', function (req, res) {
-    console.log(req.body);
     var data = req.body;
     data['time'] = new Date();
     data["email_sent"] = false;
+    sendEmail(data.email);
     initDB(function (db, client) {
         insertDocuments(db, data, function () {
             client.close();
@@ -29,23 +35,6 @@ app.post('/subscribe', function (req, res) {
     res.write(JSON.stringify(data));
     res.end();
 });
-
-app.get('/', function (req, res) {
-    res.end();
-});
-
-// app.get('/getAllDocuments', function (req, res) {
-//     initDB(function (db, client) {
-//         findDocuments(db, function (docs) {
-//             res.writeHead(200, {
-//                 'Content-Type': 'application/json'
-//             });
-//             res.write(JSON.stringify(docs));
-//             res.end();
-//             client.close();
-//         });
-//     });
-// });
 
 const initDB = function (callback) {
     MongoClient.connect(url, function (err, client) {
@@ -68,6 +57,34 @@ const findDocuments = function (db, callback) {
         assert.equal(err, null);
         callback(docs);
     });
+}
+
+function sendEmail(to){
+    console.log(to);
+    var transporter = nodemailer.createTransport({
+        host: 'smtp.zoho.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'hello@hamlit.co',
+          pass: 'hamlithamlit20'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'hello@hamlit.co',
+        to: to,
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
 }
 
 app.listen(3000, '0.0.0.0');
