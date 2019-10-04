@@ -74,8 +74,8 @@ function sendEmail(to){
       var mailOptions = {
         from: 'hello@hamlit.co',
         to: to,
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
+        subject: 'Welcome to Hamlit',
+        text: 'Thanx for mailing us! We will comeback to you soon!!'
       };
       
       transporter.sendMail(mailOptions, function(error, info){
