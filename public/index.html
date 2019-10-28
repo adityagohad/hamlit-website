@@ -5,6 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <title>Hamlit</title>
+      <link rel="icon" type="image/png" href="http://localhost:3000/hl.png">
       <meta name="author" content="Hamlit"/>
       <meta name="generator" content="Starfield Technologies; Go Daddy Website Builder 8.0.0000"/>
       <meta property="og:url" content="https://hamlit.co/"/>
@@ -109,6 +110,31 @@
          src: url(https://img1.wsimg.com/gfonts/s/quicksand/v13/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2) format('woff2');
          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
          }
+
+         .typewriter p {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
       </style>
       <link rel="stylesheet" href="https://img1.wsimg.com/blobby/go/87dd9eb9-623e-4f11-88b5-614bd0a181c2/gpub/e2724dbdf43d5d08/styles.css"/>
       <link data-glamor="cxs-default-sheet" rel="stylesheet" href="https://img1.wsimg.com/blobby/go/87dd9eb9-623e-4f11-88b5-614bd0a181c2/gpub/88605a8b4c3aaac1/styles.css"/>
@@ -140,7 +166,7 @@
                                        <div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-1m c1-21 c1-22 c1-23 c1-1d c1-24 c1-25 c1-26 c1-27 c1-28 c1-b c1-c c1-29 c1-2a c1-2b c1-2c c1-2d c1-2e c1-2f c1-2g c1-2h c1-2i c1-2j c1-2k c1-2l c1-2m c1-d c1-e x-d-ux">
                                           <div data-ux="Hero" class="x-el x-el-div c1-1 c1-2 c1-2n c1-2o c1-g c1-h c1-1d c1-2p c1-2q c1-b c1-c c1-2r c1-2s c1-d c1-e x-d-ux">
                                              <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e x-d-ux">
-                                                <p typography="BodyAlpha" data-ux="Phone" data-aid="HEADER_PHONE_RENDERED" data-route="phone" data-tccl="ux2.header.phone_number.click,click" class="x-el x-el-p c1-1 c1-2 c1-2q c1-2p c1-2t c1-2u c1-c c1-2v c1-y c1-z c1-b c1-d c1-e x-d-ux x-d-aid x-d-route x-d-tccl">Encounter the next era of riding safety!</p>
+                                                <span class="typewriter"><p typography="BodyAlpha" data-ux="Phone" data-aid="HEADER_PHONE_RENDERED" data-route="phone" data-tccl="ux2.header.phone_number.click,click" class="x-el x-el-p c1-1 c1-2 c1-2q c1-2p c1-2t c1-2u c1-c c1-2v c1-y c1-z c1-b c1-d c1-e x-d-ux x-d-aid x-d-route x-d-tccl">Encounter the next era of riding safety!</p></span>
                                                 <hr data-ux="HR" class="x-el x-el-hr c1-1 c1-2 c1-2w c1-2x c1-x c1-2y c1-s c1-4 c1-2z c1-b c1-c c1-d c1-e x-d-ux"/>
                                              </div>
                                              <div data-ux="Block" data-aid="HEADER_LOGO_RENDERED" class="x-el x-el-div c1-30 c1-31 c1-1d c1-4 c1-32 c1-c c1-33 c1-d c1-e x-d-ux x-d-aid">
@@ -278,7 +304,7 @@
                                        </div>
                                     </div>
                                     <div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-1m c1-7n c1-22 c1-23 c1-1d c1-24 c1-7o c1-26 c1-7p c1-b c1-c c1-7q c1-7r c1-d c1-e x-d-ux">
-                                       <h5 typography="BodyAlpha" data-ux="Heading" data-aid="FOOTER_POWERED_BY_RENDERED" data-route="poweredBy" class="x-el x-el-h5 c1-1 c1-2 c1-2q c1-2p c1-6g c1-c c1-7w c1-2v c1-18 c1-17 c1-7x c1-z c1-b c1-7y c1-6f c1-d c1-e x-d-ux x-d-aid x-d-route"><span>Made with &lt;3 in Singapore</span></h5>
+                                       <h5 typography="BodyAlpha" data-ux="Heading" data-aid="FOOTER_POWERED_BY_RENDERED" data-route="poweredBy" class="x-el x-el-h5 c1-1 c1-2 c1-2q c1-2p c1-6g c1-c c1-7w c1-2v c1-18 c1-17 c1-7x c1-z c1-b c1-7y c1-6f c1-d c1-e x-d-ux x-d-aid x-d-route"><span>Made with ❤️ in Singapore</span></h5>
                                     </div>
                                  </div>
                               </div>
