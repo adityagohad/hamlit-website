@@ -62,17 +62,17 @@ const findDocuments = function (db, callback) {
 function sendEmail(to){
     console.log(to);
     var transporter = nodemailer.createTransport({
-        host: 'hamlit.co',
+        host: 'smtp.zoho.in',
         port: 465,
         secure: true,
         auth: {
-          user: 'hello@hamlit.co',
-          pass: 'hamlithamlit20'
+          user: 'aditya@hamlit.co',
+          pass: 'MU7p2xpXNT0y'
         }
       });
       
       var mailOptions = {
-        from: 'hello@hamlit.co',
+        from: 'aditya@hamlit.co',
         to: to,
         subject: 'Welcome to Hamlit',
         text: 'Thanx for mailing us! We will comeback to you soon!!'
