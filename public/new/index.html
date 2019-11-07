@@ -756,7 +756,7 @@
                           </div>
                         </div> -->
                         <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded">Subscribe</button>
+                          <button id="btn_register" type="submit" class="button button-a button-big button-rouded" onclick="submitform()">Subscribe</button>
                         </div>
                       </div>
                     </form>
@@ -813,6 +813,23 @@
   <div id="preloader"></div>
 
   <!-- JavaScript Libraries -->
+  <script>
+    function submitform(){
+      var data ={};
+      data["email"] = $("#email").val();
+      console.log(data);
+      $.ajax({
+        url: "https://hamlit.co/subscribe",
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data)
+      }).done(function(response){
+         $("#email").val("");
+      }).fail(function(jqXHR, textStatus, errorThrown){
+      });
+    }
+   </script>
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
   <script src="lib/popper/popper.min.js"></script>
