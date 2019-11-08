@@ -1263,3 +1263,8 @@ footer .credits a {
     bottom: 15px;
   }
 }
+
+.jumbotron {
+  padding-top: 20px !important;
+  padding-bottom: 10px !important;
+}
