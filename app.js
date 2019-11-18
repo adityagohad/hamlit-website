@@ -8,6 +8,8 @@ const url = 'mongodb://localhost:27017';
 const dbName = 'hamlit_subscribers';
 
 var nodemailer = require('nodemailer');
+var fs = require('fs');
+var handlebars = require('handlebars');
 
 const app = express();
 app.use(cors());
@@ -59,32 +61,36 @@ const findDocuments = function (db, callback) {
     });
 }
 
-function sendEmail(to){
-    console.log(to);
+function sendEmail(to) {
+    var buffer = fs.readFileSync('public/sub_temp.html');
+    var html = buffer.toString();
+    var template = handlebars.compile(html);
+    var replacements = {};
+    var htmlToSend = template(replacements);
     var transporter = nodemailer.createTransport({
         host: 'smtp.zoho.in',
         port: 465,
         secure: true,
         auth: {
-          user: 'aditya@hamlit.co',
-          pass: 'MU7p2xpXNT0y'
+            user: 'aditya@hamlit.co',
+            pass: 'MU7p2xpXNT0y'
         }
-      });
-      
-      var mailOptions = {
+    });
+
+    var mailOptions = {
         from: 'aditya@hamlit.co',
         to: to,
         subject: 'Welcome to Hamlit',
-        text: 'Thanx for mailing us! We will comeback to you soon!!'
-      };
-      
-      transporter.sendMail(mailOptions, function(error, info){
+        html: htmlToSend
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-          console.log(error);
+            console.log(error);
         } else {
-          console.log('Email sent: ' + info.response);
+            console.log('Email sent: ' + info.response);
         }
-      });
+    });
 }
 
 app.listen(3000, '0.0.0.0');
