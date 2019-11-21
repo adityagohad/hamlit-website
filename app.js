@@ -72,13 +72,14 @@ function sendEmail(to) {
         port: 465,
         secure: true,
         auth: {
-            user: 'aditya@hamlit.co',
-            pass: 'MU7p2xpXNT0y'
+            user: 'hello@hamlit.co',
+            pass: 'S2TJfBYAVWTv'
+            //pass: 'MU7p2xpXNT0y'
         }
     });
 
     var mailOptions = {
-        from: 'aditya@hamlit.co',
+        from: 'hello@hamlit.co',
         to: to,
         subject: 'Welcome to Hamlit',
         html: htmlToSend

@@ -69,8 +69,7 @@
       <div class="table-cell">
         <div class="container">
           <h1 class="intro-title mb-4">Hamlit</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Encounter the next era of riding safety!,World’s
-              first two-wheeler blind spot notifier</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Encounter the next era of riding safety!,World’s first two-wheeler blind spot notifier</span><strong class="text-slider"></strong></p>
         </div>
       </div>
     </div>
@@ -248,10 +247,21 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
+  <div id="alert" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <h4><p class="text-center" style="margin-top: 18px;">Awesome!!! Will be in touch with you 😊</p></h4>
+        </div>
+      </div>
+    </div>
 
   <!-- JavaScript Libraries -->
   <script>
     function submitform() {
+      $('#alert').modal({
+        show : true,
+        keyboard: true
+      });
       var data = {};
       data["email"] = $("#email").val();
       console.log(data);
