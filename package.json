@@ -1,6 +1,6 @@
 {
   "name": "hamlit-website",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "hamlit website",
   "main": "index.js",
   "scripts": {
